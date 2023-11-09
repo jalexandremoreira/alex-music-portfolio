@@ -14,6 +14,7 @@ import {
   Youtube,
 } from '@/components/Icons';
 import theme from '@/theme';
+import Circles from '@/components/home/circles';
 
 export default function MusicPage() {
   React.useEffect(() => {
@@ -34,20 +35,7 @@ export default function MusicPage() {
 
   return (
     <Stack width="100%" height="100%" direction="row" bgcolor="primary.700">
-      <Box
-        position="absolute"
-        width="100%"
-        height="100%"
-        left={0}
-        top={0}
-        overflow="hidden"
-      >
-        <Box position="absolute" top={-400} right={-130}>
-          <svg width="630" height="630" viewBox="0 0 568 568">
-            <circle cx="284" cy="284" r="284" fill={palette.primary[600]} />
-          </svg>
-        </Box>
-      </Box>
+      <Circles />
 
       <Stack
         width="50%"
