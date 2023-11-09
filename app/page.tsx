@@ -1,95 +1,145 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+import React from 'react';
+import Stack from '@mui/material/Stack';
+import Link from 'next/link';
+import { Box, Typography } from '@mui/material';
 
-export default function Home() {
+import PictureWithBorder from '@/components/PictureWithBorder';
+import {
+  AMHorizontal,
+  Bandcamp,
+  Instagram,
+  Spotify,
+  Tiktok,
+  Youtube,
+} from '@/components/Icons';
+import theme from '@/theme';
+
+export default function MusicPage() {
+  React.useEffect(() => {
+    document.title = 'Alexandre Moreira';
+  }, []);
+
+  const { palette } = theme;
+
+  const hover = {
+    transition: 'color 0.3s ease',
+    '&:hover': { color: 'primary.800' },
+  };
+  const picDimensions = {
+    wD: 454,
+    hD: 636,
+  };
+  const picBorder = 16;
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Stack width="100%" height="100%" direction="row" bgcolor="primary.700">
+      <Box
+        position="absolute"
+        width="100%"
+        height="100%"
+        left={0}
+        top={0}
+        overflow="hidden"
+      >
+        <Box position="absolute" top={-400} right={-130}>
+          <svg width="630" height="630" viewBox="0 0 568 568">
+            <circle cx="284" cy="284" r="284" fill={palette.primary[600]} />
+          </svg>
+        </Box>
+      </Box>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <Stack
+        width="50%"
+        justifyContent="center"
+        alignItems="flex-end"
+        paddingRight="3%"
+        gap="40px"
+        zIndex={20}
+      >
+        <Stack
+          className="drop-shadow"
+          gap="20px"
+          width={picDimensions.wD + picBorder}
+        >
+          <AMHorizontal color={palette.white.main} size={400} />
+
+          <Typography color="white.main" variant="h5">
+            sound engineer | producer | musician
+          </Typography>
+        </Stack>
+        <PictureWithBorder
+          src="/images/alex-trees.png"
+          picDimensions={picDimensions}
+          picBorder={picBorder}
+          alt="Alexandre Moreira"
         />
-      </div>
+      </Stack>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+      <Stack
+        bgcolor="white.200"
+        height="100%"
+        justifyContent="center"
+        paddingLeft="3%"
+        paddingTop="134px"
+        width="50%"
+      >
+        <Stack
+          justifyContent="space-between"
+          height={picDimensions.hD + picBorder}
+          zIndex={20}
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          <Stack gap="20px">
+            {[
+              { title: 'my music', link: '/my-music' },
+              { title: 'music I recorded', link: '/my-music' },
+              { title: 'about me', link: '/my-music' },
+              { title: 'contact me', link: '/my-music' },
+              { title: 'my studio', link: '/my-music' },
+            ].map(({ title, link }, index) => (
+              <Link href={link} key={index}>
+                <Typography
+                  color="primary.main"
+                  variant="h3"
+                  fontWeight="600"
+                  sx={hover}
+                >
+                  {title}
+                </Typography>
+              </Link>
+            ))}
+          </Stack>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          <Stack direction="row" gap={3}>
+            {[
+              {
+                icon: <Instagram size={55} color={palette.primary.main} />,
+                link: '#',
+              },
+              {
+                icon: <Tiktok size={55} color={palette.primary.main} />,
+                link: '#',
+              },
+              {
+                icon: <Bandcamp size={55} color={palette.primary.main} />,
+                link: '#',
+              },
+              {
+                icon: <Spotify size={55} color={palette.primary.main} />,
+                link: '#',
+              },
+              {
+                icon: <Youtube size={55} color={palette.primary.main} />,
+                link: '#',
+              },
+            ].map(({ icon, link }, index) => (
+              <Link href={link} key={index}>
+                {icon}
+              </Link>
+            ))}
+          </Stack>
+        </Stack>
+      </Stack>
+    </Stack>
+  );
 }
