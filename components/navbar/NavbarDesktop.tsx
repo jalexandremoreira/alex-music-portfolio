@@ -8,7 +8,7 @@ import Link from 'next/link';
 // import NavbarMenu from './NavbarMenu';
 import Theme from '@/theme';
 import useAppDimensions from '@/hooks/useAppDimensions';
-import { RouteIndicator as Indicator } from '../Icons';
+import { AMVertical, RouteIndicator as Indicator } from '../Icons';
 
 export default function Navbar() {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
@@ -16,99 +16,67 @@ export default function Navbar() {
 
   const colors = Theme.palette;
 
-  const navbarId =
-    pathname === '/' ? 'navbar-desktop-gradient' : 'navbar-desktop-solid';
+  const navbarColor = pathname === 'my-music' ? 'primary.700' : 'primary.700';
 
   return (
     <Stack
       alignItems="center"
-      className="navbar navbar-desktop"
-      id={navbarId}
+      bgcolor={navbarColor}
+      id="navbar"
       justifyContent="center"
       left={0}
-      maxHeight="115px"
       paddingTop="30px"
       paddingY="12px"
       top={0}
-      width="100vw"
+      width="100%"
       zIndex={100}
+      // position="sticky"
     >
       <Box
         alignItems="center"
+        className="drop-shadow"
         display="flex"
         flexDirection="row"
         justifyContent="space-between"
+        gap="20%"
         margin="auto"
         maxWidth={maxWidthDesktop}
         paddingX={paddingXDesktop}
         width="100%"
       >
         <Link href="/">
-          <Typography variant="h2" color="white.main">
-            xano
-          </Typography>
+          <AMVertical color={colors.white.main} size={120} />
         </Link>
 
-        {pathname !== '/' && (
-          <Stack
-            className="user-link"
-            direction="row"
-            justifyContent="space-between"
-            spacing="10px"
-            height="100%"
-            marginTop="4px"
-          >
-            {[{ title: 'my-music', link: '/my-music' }].map(
-              ({ title, link }, index) => (
-                <Stack key={index} direction="row" spacing="10px">
-                  <Stack direction="column" alignItems="center">
-                    <Link href={link}>
-                      <Typography color="white.main" variant="h4">
-                        {title}
-                      </Typography>
-                    </Link>
-
-                    {pathname === link && (
-                      <Indicator color={colors.primary.main} size={60} />
-                    )}
-                  </Stack>
-
-                  {index !== 2 && (
-                    <Typography color="white.main" variant="h4">
-                      |
-                    </Typography>
-                  )}
-                </Stack>
-              )
-            )}
-          </Stack>
-        )}
-
-        {/* <Stack
+        <Stack
+          alignItems="center"
           className="user-link"
           direction="row"
+          flex={1}
+          height="100%"
           justifyContent="space-between"
-          spacing={1}
+          spacing="10px"
         >
           {[
-            {
-              icon: <Instagram color={colors.white.main} size={35} />,
-              link: 'https://www.instagram.com/ines.cruz.8/?hl=en',
-            },
-            {
-              icon: <LinkedIn color={colors.white.main} size={35} />,
-              link: 'https://www.linkedin.com/in/in%C3%AAs-cruz-03b9b1133/',
-            },
-            {
-              icon: <Facebook color={colors.white.main} size={35} />,
-              link: 'https://www.facebook.com/ines.cruz.77',
-            },
-          ].map(({ icon, link }, index) => (
-            <Link href={link} key={index}>
-              <a target="_blank">{icon}</a>
-            </Link>
+            { title: 'my music', link: '/my-music' },
+            { title: 'music I recorded', link: '#' },
+            { title: 'about me', link: '#' },
+            { title: 'contact me', link: '#' },
+            { title: 'my studio', link: '#' },
+          ].map(({ title, link }, index) => (
+            <Stack key={index} alignItems="center">
+              <Link href={link}>
+                <Typography color="white.main" variant="h6">
+                  {title}
+                </Typography>
+              </Link>
+
+              {pathname === link && (
+                <Indicator color={colors.white.main} size={60} />
+              )}
+            </Stack>
           ))}
-        </Stack> */}
+        </Stack>
       </Box>
     </Stack>
   );

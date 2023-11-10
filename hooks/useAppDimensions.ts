@@ -15,10 +15,10 @@ export default function useAppDimensions() {
   }, []);
 
   const marginBottom = isMobile ? '50px' : '80px';
-  const maxWidthDesktop = '1600px';
+  const maxWidthDesktop = '1400px';
   const paddingTopDesktop = '120px';
   const paddingTopMobile = '90px';
-  const paddingXDesktop = width > 1199 ? '200px' : '5vw';
+  const paddingXDesktop = width > 1199 ? '130px' : '5vw';
   const paddingXMobile = '15px';
 
   return {

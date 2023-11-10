@@ -1,3 +1,28 @@
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+  background: #b24865;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #b24865;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f1899d;
+  border: solid 3px #b24865;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffc1cd;
+  transition: 0.5ms ease-in-out;
+}
+
 :root {
   width: 100%;
 }
@@ -39,4 +64,9 @@ a {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
 }

@@ -31,17 +31,24 @@ export default function PictureWithBorder({
         width={picDimensions.wD + picBorder}
       >
         <Box
-          borderRadius="2px"
+          borderRadius="2px 2px 0 2px"
           height={picDimensions.hD}
-          overflow="hidden"
           width={picDimensions.wD}
+          bgcolor="secondary.400"
         >
-          <Image
-            alt={alt ?? 'Image of something'}
+          <Box
+            borderRadius="2px"
             height={picDimensions.hD}
-            src={src}
+            overflow="hidden"
             width={picDimensions.wD}
-          />
+          >
+            <Image
+              alt={alt ?? 'Image of something'}
+              height={picDimensions.hD}
+              src={src}
+              width={picDimensions.wD}
+            />
+          </Box>
         </Box>
 
         <Box
