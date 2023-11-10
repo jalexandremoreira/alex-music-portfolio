@@ -1,20 +1,14 @@
 'use client';
 import React from 'react';
-import Stack from '@mui/material/Stack';
 import Link from 'next/link';
-import { Box, Typography } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import { Typography } from '@mui/material';
 
+import Circles from '@/components/home/Circles';
+import Links from '@/components/home/Links';
 import PictureWithBorder from '@/components/PictureWithBorder';
-import {
-  AMHorizontal,
-  Bandcamp,
-  Instagram,
-  Spotify,
-  Tiktok,
-  Youtube,
-} from '@/components/Icons';
 import theme from '@/theme';
-import Circles from '@/components/home/circles';
+import { AMHorizontal } from '@/components/Icons';
 
 export default function MusicPage() {
   React.useEffect(() => {
@@ -24,7 +18,7 @@ export default function MusicPage() {
   const { palette } = theme;
 
   const hover = {
-    transition: 'color 0.3s ease',
+    transition: 'color 0.1s ease',
     '&:hover': { color: 'primary.800' },
   };
   const picDimensions = {
@@ -34,7 +28,13 @@ export default function MusicPage() {
   const picBorder = 16;
 
   return (
-    <Stack width="100%" height="100%" direction="row" bgcolor="primary.700">
+    <Stack
+      width="100%"
+      height="100%"
+      direction="row"
+      bgcolor="primary.700"
+      className="prevent-select"
+    >
       <Circles />
 
       <Stack
@@ -98,34 +98,10 @@ export default function MusicPage() {
             ))}
           </Stack>
 
-          <Stack direction="row" gap={3}>
-            {[
-              {
-                icon: <Instagram size={55} color={palette.primary.main} />,
-                link: '#',
-              },
-              {
-                icon: <Tiktok size={55} color={palette.primary.main} />,
-                link: '#',
-              },
-              {
-                icon: <Bandcamp size={55} color={palette.primary.main} />,
-                link: '#',
-              },
-              {
-                icon: <Spotify size={55} color={palette.primary.main} />,
-                link: '#',
-              },
-              {
-                icon: <Youtube size={55} color={palette.primary.main} />,
-                link: '#',
-              },
-            ].map(({ icon, link }, index) => (
-              <Link href={link} key={index}>
-                {icon}
-              </Link>
-            ))}
-          </Stack>
+          <Links
+            color={palette.primary.main}
+            hoverColor={palette.primary[800]}
+          />
         </Stack>
       </Stack>
     </Stack>
