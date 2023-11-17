@@ -27,13 +27,15 @@ export default function MyMusicPage() {
           {
             title: 'title goes here yo',
             date: 'date goes here yo',
-            description: 'description goes here yo',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. A in et viverra turpis ut sit euismod amet. Libero hendrerit feugiat amet in bibendum id eget nibh ullamcorper. Sagittis habitant neque consectetur fermentum tristique ac eu lacus. In tellus lacus purus velit ut proin.',
             link: '#',
           },
           {
             title: 'title goes here yo',
             date: 'date goes here yo',
-            description: 'description goes here yo',
+            description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. A in et viverra turpis ut sit euismod amet. Libero hendrerit feugiat amet in bibendum id eget nibh ullamcorper. Sagittis habitant neque consectetur fermentum tristique ac eu lacus. In tellus lacus purus velit ut proin.',
             link: '#',
           },
         ].map(({ title, date, description }, index) => (

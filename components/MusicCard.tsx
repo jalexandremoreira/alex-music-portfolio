@@ -39,7 +39,7 @@ export default function MusicCard({
 
       <Stack justifyContent="space-between" height="100%" flexGrow={1}>
         <Stack gap={4}>
-          <Typography color="white.main" variant="h5">
+          <Typography color="white.main" variant="h3" className="titles">
             {title}
           </Typography>
 

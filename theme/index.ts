@@ -38,6 +38,9 @@ interface CustomThemeOptions extends ThemeOptions {
 declare module '@mui/material/styles' {
   interface Theme {
     palette: CustomPalette;
+    typography: {
+      fontFamily: string;
+    };
   }
 }
 
@@ -58,6 +61,12 @@ const theme = createTheme({
       300: '#F3D8DD',
       200: '#FFE4E9',
       main: '#FFFAFB',
+    },
+  },
+  typography: {
+    fontFamily: `'Sintony', sans-serif;`,
+    button: {
+      textTransform: 'none',
     },
   },
 } as CustomThemeOptions);

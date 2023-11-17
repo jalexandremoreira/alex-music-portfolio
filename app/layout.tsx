@@ -1,19 +1,16 @@
 'use client';
-// import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Stack from '@mui/material/Stack';
 import { usePathname } from 'next/navigation';
+import localFont from 'next/font/local';
 
 import ThemeRegistry from '@/theme/ThemeRegistry';
 import useAppDimensions from '@/hooks/useAppDimensions';
 import './globals.css';
 import NavbarDesktop from '@/components/navbar/NavbarDesktop';
-const inter = Inter({ subsets: ['latin'] });
 
-// export const metadata: Metadata = {
-//   title: 'Alexandre Moreira',
-//   description: 'Producer, musician, songwriter.',
-// };
+const seoulHangang = localFont({
+  src: './seoulHangang.ttf',
+});
 
 export default function RootLayout({
   children,
@@ -27,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeRegistry options={{ key: 'css' }}>
-        <body className={inter.className}>
+        <body className={seoulHangang.className}>
           <Stack
             // className={
             //   isMobile ? 'layout-container-mobile' : 'layout-container-desktop'
