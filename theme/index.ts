@@ -64,7 +64,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: `'Sintony', sans-serif;`,
+    fontFamily: `var('--font-sintony')`,
     button: {
       textTransform: 'none',
     },

@@ -36,7 +36,6 @@ body {
   min-height: 100%;
   padding: 0;
   width: 100%;
-  font-family: var(--font-sintony);
 }
 
 #__next {
@@ -56,11 +55,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-.titles {
-  font-family: var(--font-seoulHangang) !important;
-}
-
 .drop-shadow {
   filter: drop-shadow(rgba(0, 0, 0, 0.15) 2px 2px 1.2px);
 }

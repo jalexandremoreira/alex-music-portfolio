@@ -1,12 +1,14 @@
 import { Stack, Typography } from '@mui/material';
 
 import PictureWithBorder from './PictureWithBorder';
+import Header from './header';
 
 interface Props {
   bgcolor: string;
   title: string;
   date: string;
   description: string;
+  pic: string;
 }
 
 export default function MusicCard({
@@ -14,6 +16,7 @@ export default function MusicCard({
   title,
   date,
   description,
+  pic,
 }: Props) {
   const picDimensions = {
     wD: 555,
@@ -31,7 +34,7 @@ export default function MusicCard({
       gap="20px"
     >
       <PictureWithBorder
-        src="/images/im-doing-this-for-the-money.png"
+        src={pic}
         picDimensions={picDimensions}
         picBorder={picBorder}
         alt="Alexandre Moreira"
@@ -39,9 +42,12 @@ export default function MusicCard({
 
       <Stack justifyContent="space-between" height="100%" flexGrow={1}>
         <Stack gap={4}>
-          <Typography color="white.main" variant="h3" className="titles">
-            {title}
-          </Typography>
+          <Header
+            color="white.main"
+            variant="h3"
+            className="titles"
+            text={title}
+          />
 
           <Stack gap={2}>
             <Typography color="white.main" variant="h5">

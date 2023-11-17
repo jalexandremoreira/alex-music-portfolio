@@ -47,6 +47,7 @@ export default function PictureWithBorder({
               height={picDimensions.hD}
               src={src}
               width={picDimensions.wD}
+              loading="lazy"
             />
           </Box>
         </Box>

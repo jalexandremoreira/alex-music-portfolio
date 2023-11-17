@@ -1,15 +1,17 @@
 'use client';
 import Stack from '@mui/material/Stack';
+import { Sintony } from 'next/font/google';
 import { usePathname } from 'next/navigation';
-import localFont from 'next/font/local';
 
-import ThemeRegistry from '@/theme/ThemeRegistry';
-import useAppDimensions from '@/hooks/useAppDimensions';
 import './globals.css';
 import NavbarDesktop from '@/components/navbar/NavbarDesktop';
+import ThemeRegistry from '@/theme/ThemeRegistry';
+import useAppDimensions from '@/hooks/useAppDimensions';
 
-const seoulHangang = localFont({
-  src: './seoulHangang.ttf',
+export const sintony = Sintony({
+  subsets: ['latin-ext'],
+  variable: '--font-sintony',
+  weight: ['400', '700'],
 });
 
 export default function RootLayout({
@@ -23,8 +25,8 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <ThemeRegistry options={{ key: 'css' }}>
-        <body className={seoulHangang.className}>
+      <body className={sintony.className}>
+        <ThemeRegistry options={{ key: 'css' }}>
           <Stack
             // className={
             //   isMobile ? 'layout-container-mobile' : 'layout-container-desktop'
@@ -43,8 +45,8 @@ export default function RootLayout({
 
             {children && children}
           </Stack>
-        </body>
-      </ThemeRegistry>
+        </ThemeRegistry>
+      </body>
     </html>
   );
 }
