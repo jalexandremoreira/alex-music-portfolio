@@ -59,7 +59,7 @@ export default function Navbar() {
         >
           {[
             { title: 'my music', link: '/my-music' },
-            { title: 'music I recorded', link: '#' },
+            { title: 'music I recorded', link: '/music-i-recorded' },
             { title: 'about me', link: '#' },
             { title: 'contact me', link: '#' },
             { title: 'my studio', link: '#' },

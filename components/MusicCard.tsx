@@ -1,14 +1,17 @@
+import Link from 'next/link';
 import { Stack, Typography } from '@mui/material';
 
-import PictureWithBorder from './PictureWithBorder';
 import Header from './header';
+import PictureWithBorder from './PictureWithBorder';
+import { Links } from '@/services/musicList';
+import MusicCardLinks from './MusicCardLinks';
 
 interface Props {
   bgcolor: string;
   title: string;
   date: string;
   description: string;
-  pic: string;
+  links: Links;
 }
 
 export default function MusicCard({
@@ -16,12 +19,13 @@ export default function MusicCard({
   title,
   date,
   description,
-  pic,
+  links,
 }: Props) {
   const picDimensions = {
     wD: 555,
     hD: 555,
   };
+
   const picBorder = 16;
 
   return (
@@ -33,12 +37,14 @@ export default function MusicCard({
       justifyContent="space-between"
       gap="20px"
     >
-      <PictureWithBorder
-        src={pic}
-        picDimensions={picDimensions}
-        picBorder={picBorder}
-        alt="Alexandre Moreira"
-      />
+      {links.coverArt && (
+        <PictureWithBorder
+          src={links.coverArt}
+          picDimensions={picDimensions}
+          picBorder={picBorder}
+          alt="Alexandre Moreira"
+        />
+      )}
 
       <Stack justifyContent="space-between" height="100%" flexGrow={1}>
         <Stack gap={4}>
@@ -60,9 +66,11 @@ export default function MusicCard({
           </Stack>
         </Stack>
 
-        <Typography color="white.main" variant="h5">
-          some links here
-        </Typography>
+        <MusicCardLinks
+          spotify={links.spotify}
+          appleMusic={links.appleMusic}
+          bandCamp={links.bandCamp}
+        />
       </Stack>
     </Stack>
   );

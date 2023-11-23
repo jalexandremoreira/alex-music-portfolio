@@ -80,7 +80,7 @@ export default function MusicPage() {
           <Stack gap="20px">
             {[
               { title: 'my music', link: '/my-music' },
-              { title: 'music I recorded', link: '/my-music' },
+              { title: 'music I recorded', link: '/music-i-recorded' },
               { title: 'about me', link: '/my-music' },
               { title: 'contact me', link: '/my-music' },
               { title: 'my studio', link: '/my-music' },
