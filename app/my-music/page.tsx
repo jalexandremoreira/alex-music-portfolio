@@ -2,10 +2,11 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
 
-import useAppDimensions from '@/hooks/useAppDimensions';
+import BG from './BG';
 import MusicCard from '@/components/MusicCard';
-import { Box } from '@mui/material';
+import useAppDimensions from '@/hooks/useAppDimensions';
 import { Album, getAlbums } from '@/services/musicList';
+import { Box } from '@mui/material';
 
 export default function MyMusicPage() {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
@@ -23,6 +24,8 @@ export default function MyMusicPage() {
       justifyContent="center"
       width="100%"
     >
+      <BG />
+
       <Stack
         height="100%"
         gap="40px"
@@ -30,6 +33,7 @@ export default function MyMusicPage() {
         paddingX={paddingXDesktop}
         paddingTop="100px"
         width="100%"
+        zIndex={20}
       >
         {albums
           ?.filter((a) => a.artist === 'Alexandre Moreira')
