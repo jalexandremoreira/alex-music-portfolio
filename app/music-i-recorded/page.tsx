@@ -17,6 +17,7 @@ export default function MyMusicPage() {
 
   React.useEffect(() => {
     setAlbums(getAlbums());
+    document.title = 'Alexandre Moreira - music I recorded';
   }, []);
 
   const handleClose = () => setOpen(false);

@@ -1,10 +1,11 @@
 'use client';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Masonry from '@mui/lab/Masonry';
-import React from 'react';
 import Stack from '@mui/material/Stack';
 import { Box, Typography } from '@mui/material';
+import { shuffle } from 'lodash';
 
 import useAppDimensions from '@/hooks/useAppDimensions';
 import Header from '@/components/header';
@@ -13,7 +14,15 @@ import { getTestimonials, Testimonial } from '@/services/testimonials';
 export default function MyMusicPage() {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
 
-  const [testimonials] = React.useState<Testimonial[]>(getTestimonials());
+  const [testimonials, setTestimonials] = React.useState<Testimonial[] | null>(
+    getTestimonials()
+  );
+
+  React.useEffect(() => {
+    const tests = getTestimonials() as Testimonial[];
+    setTestimonials(shuffle(tests));
+    document.title = 'Alexandre Moreira - about me';
+  }, []);
 
   const hover = {
     transition: 'color 0.1s ease',
@@ -106,19 +115,21 @@ export default function MyMusicPage() {
             />
           </Stack>
 
-          <Box width="100%">
-            <Masonry
-              columns={2}
-              spacing={8}
-              sx={{
-                margin: '0 !important',
-                padding: '0 !important',
-              }}
-            >
-              {testimonials.map(
+          <Masonry
+            columns={2}
+            spacing={8}
+            sx={{
+              margin: '0 !important',
+              padding: '0 !important',
+            }}
+          >
+            {testimonials ? (
+              testimonials.map(
                 ({ client, message, role, clientUrl }, index) => (
                   <Stack key={index} gap="10px">
-                    <Typography color="white.main">{message}</Typography>
+                    <Typography color="white.main" fontStyle="italic">
+                      {message}
+                    </Typography>
 
                     <Stack
                       direction="row"
@@ -150,9 +161,11 @@ export default function MyMusicPage() {
                     </Stack>
                   </Stack>
                 )
-              )}
-            </Masonry>
-          </Box>
+              )
+            ) : (
+              <></>
+            )}
+          </Masonry>
         </Stack>
       </Stack>
     </Stack>
