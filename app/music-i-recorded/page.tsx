@@ -3,10 +3,11 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 import Image from 'next/image';
 
+import Footer from '@/components/footer/Footer';
+import MusicCard from '@/components/MusicCard';
 import useAppDimensions from '@/hooks/useAppDimensions';
 import { Album, getAlbum, getAlbums } from '@/services/musicList';
 import { Box, Modal } from '@mui/material';
-import MusicCard from '@/components/MusicCard';
 
 export default function MyMusicPage() {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
@@ -105,6 +106,8 @@ export default function MyMusicPage() {
 
         {albums && albums?.length % 3 > 0 && <Box width={315} />}
       </Stack>
+
+      <Footer colorScheme={1} />
     </Stack>
   );
 }

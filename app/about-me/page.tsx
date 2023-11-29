@@ -7,8 +7,9 @@ import Stack from '@mui/material/Stack';
 import { Box, Typography } from '@mui/material';
 import { shuffle } from 'lodash';
 
-import useAppDimensions from '@/hooks/useAppDimensions';
+import Footer from '@/components/footer/Footer';
 import Header from '@/components/header';
+import useAppDimensions from '@/hooks/useAppDimensions';
 import { getTestimonials, Testimonial } from '@/services/testimonials';
 
 export default function MyMusicPage() {
@@ -40,7 +41,6 @@ export default function MyMusicPage() {
       <Stack
         gap="50px"
         height="100%"
-        marginBottom="60px"
         maxWidth={maxWidthDesktop}
         paddingTop="100px"
         paddingX={paddingXDesktop}
@@ -168,6 +168,8 @@ export default function MyMusicPage() {
           </Masonry>
         </Stack>
       </Stack>
+
+      <Footer colorScheme={2} />
     </Stack>
   );
 }
