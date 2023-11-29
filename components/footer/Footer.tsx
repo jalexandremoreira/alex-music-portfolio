@@ -1,6 +1,6 @@
 import React from 'react';
-import { Stack, Typography } from '@mui/material';
 import Link from 'next/link';
+import { Stack, Typography } from '@mui/material';
 
 import Links from '../home/Links';
 import theme from '@/theme';

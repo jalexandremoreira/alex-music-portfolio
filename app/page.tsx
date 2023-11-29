@@ -82,8 +82,8 @@ export default function MusicPage() {
               { title: 'my music', link: '/my-music' },
               { title: 'music I recorded', link: '/music-i-recorded' },
               { title: 'about me', link: '/about-me' },
-              { title: 'contact me', link: '/my-music' },
-              { title: 'my studio', link: '/my-music' },
+              { title: 'contact me', link: 'contact-me' },
+              { title: 'my studio', link: '/my-studio' },
             ].map(({ title, link }, index) => (
               <Link href={link} key={index}>
                 <Typography

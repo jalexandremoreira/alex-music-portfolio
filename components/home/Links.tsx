@@ -13,9 +13,11 @@ import {
 export default function Links({
   color,
   hoverColor,
+  spaceBetween,
 }: {
   color: string;
   hoverColor: string;
+  spaceBetween?: boolean;
 }) {
   const [colors, setColors] = React.useState<string[] | null>(null);
 
@@ -43,7 +45,11 @@ export default function Links({
 
   if (colors)
     return (
-      <Stack direction="row" gap={3}>
+      <Stack
+        direction="row"
+        gap={3}
+        justifyContent={spaceBetween ? 'space-between' : 'flex-start'}
+      >
         {[
           {
             icon: <Instagram size={55} color={colors[0]} />,

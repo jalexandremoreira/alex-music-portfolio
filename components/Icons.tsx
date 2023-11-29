@@ -394,3 +394,43 @@ export function Youtube({ size, color }: IconProps) {
     </svg>
   );
 }
+
+export function ChevronDown({ size, color }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M82 34L50 66L18 34"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        stroke={color}
+      />
+    </svg>
+  );
+}
+
+export function ChevronUp({ size, color }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 66L50 34L82 66"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        stroke={color}
+      />
+    </svg>
+  );
+}

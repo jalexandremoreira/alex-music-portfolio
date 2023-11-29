@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
-import Stack from '@mui/material/Stack';
 import Image from 'next/image';
+import Stack from '@mui/material/Stack';
+import { Box, Modal } from '@mui/material';
 
 import Footer from '@/components/footer/Footer';
 import MusicCard from '@/components/MusicCard';
 import useAppDimensions from '@/hooks/useAppDimensions';
 import { Album, getAlbum, getAlbums } from '@/services/musicList';
-import { Box, Modal } from '@mui/material';
 
 export default function MyMusicPage() {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
@@ -88,11 +88,11 @@ export default function MyMusicPage() {
             }}
             bgcolor="secondary.400"
             borderRadius="2px"
+            className="music-card"
             height={315}
+            marginBottom="2vw"
             overflow="hidden"
             width={315}
-            marginBottom="1vw"
-            className="music-card"
           >
             <Image
               alt={title}
