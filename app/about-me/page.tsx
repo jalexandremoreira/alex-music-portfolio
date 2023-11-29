@@ -38,15 +38,23 @@ export default function MyMusicPage() {
         width="100%"
       >
         <Stack width="100%" direction="row" gap="50px" marginTop="50px">
-          <Image
-            height={605}
-            width={454}
-            loading="lazy"
-            src="/images/about-me-portrait.png"
-            alt="Alexandre Moreira"
-          />
+          <Box
+            bgcolor="secondary.400"
+            borderRadius="2px"
+            height="605px"
+            minWidth="454px"
+            overflow="hidden"
+          >
+            <Image
+              height={605}
+              width={454}
+              loading="lazy"
+              src="/images/about-me-portrait.png"
+              alt="Alexandre Moreira"
+            />
+          </Box>
 
-          <Stack width="100%" alignItems="center" gap="50px">
+          <Stack alignItems="center" gap="50px">
             <Stack width="100%" alignItems="center">
               <Header
                 color="white.main"

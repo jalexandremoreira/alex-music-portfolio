@@ -66,6 +66,15 @@ a {
   user-select: none; /* Standard syntax */
 }
 
+.music-card {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.music-card:hover {
+  opacity: 0.7;
+}
+
 #navbar {
   position: fixed;
   top: 0;

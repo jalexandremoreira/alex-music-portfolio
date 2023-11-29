@@ -84,6 +84,13 @@ export default function MyMusicPage() {
                 cursor: 'pointer',
               },
             }}
+            bgcolor="secondary.400"
+            borderRadius="2px"
+            height={315}
+            overflow="hidden"
+            width={315}
+            marginBottom="1vw"
+            className="music-card"
           >
             <Image
               alt={title}
