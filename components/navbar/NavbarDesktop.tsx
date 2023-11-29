@@ -16,7 +16,7 @@ export default function Navbar() {
 
   const colors = Theme.palette;
 
-  const navbarColor = pathname === 'my-music' ? 'primary.700' : 'primary.700';
+  const navbarColor = pathname === '/about-me' ? 'primary.800' : 'primary.700';
 
   return (
     <Stack
@@ -60,7 +60,7 @@ export default function Navbar() {
           {[
             { title: 'my music', link: '/my-music' },
             { title: 'music I recorded', link: '/music-i-recorded' },
-            { title: 'about me', link: '#' },
+            { title: 'about me', link: 'about-me' },
             { title: 'contact me', link: '#' },
             { title: 'my studio', link: '#' },
           ].map(({ title, link }, index) => (

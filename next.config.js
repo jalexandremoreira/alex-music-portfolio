@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.bcbits.com',
       },
+      {
+        protocol: 'https',
+        hostname: '**.mzstatic.com',
+      },
     ],
   },
 };

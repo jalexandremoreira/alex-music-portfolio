@@ -93,7 +93,7 @@ const albums: Album[] = [
       coverArt: 'https://f4.bcbits.com/img/a2229487081_16.jpg',
     },
     description:
-      'Inspired by all manner of buzzing creatures. Synths and vocals: Alexandre Moreira, drums performed and recorded by: Riccardo Nicolin, bass performed and recorded by: Luís Correia, xylophone: Lúcia Viana da Silva Produced. Mixed by Alexandre Moreira. Mastered by José Diogo Neves.',
+      'Inspired by all manner of buzzing creatures. Synths and vocals: Alexandre Moreira, drums performed and recorded by: Riccardo Nicolin, bass performed and recorded by: Luís Correia, xylophone: Lúcia Viana da Silva. Produced, mixed by Alexandre Moreira. Mastered by José Diogo Neves.',
   },
   {
     id: 'connecting-flights',
@@ -196,6 +196,6 @@ export function getAlbums() {
   return albums;
 }
 
-export function getAlbum(id: string) {
-  return albums.find((a) => a.id === id);
+export function getAlbum(id: string): Album {
+  return albums.find((a) => a.id === id) as Album;
 }

@@ -50,6 +50,7 @@ export default function Links({
             href={spotify}
             onMouseEnter={() => handleColorEnter(0)}
             onMouseLeave={() => handleColorLeave(0)}
+            target="_blank"
           >
             <Spotify color={colors[0]} size={iconDetails.size} />
           </Link>
@@ -60,6 +61,7 @@ export default function Links({
             href={appleMusic}
             onMouseEnter={() => handleColorEnter(1)}
             onMouseLeave={() => handleColorLeave(1)}
+            target="_blank"
           >
             <AppleMusic color={colors[1]} size={iconDetails.size} />
           </Link>
@@ -70,6 +72,7 @@ export default function Links({
             href={bandCamp}
             onMouseEnter={() => handleColorEnter(2)}
             onMouseLeave={() => handleColorLeave(2)}
+            target="_blank"
           >
             <Bandcamp color={colors[2]} size={iconDetails.size} />
           </Link>
