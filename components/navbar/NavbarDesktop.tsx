@@ -16,7 +16,12 @@ export default function Navbar() {
 
   const colors = Theme.palette;
 
-  const navbarColor = pathname === '/about-me' ? 'primary.800' : 'primary.700';
+  const navbarColor =
+    pathname === '/about-me' || pathname === '/my-studio'
+      ? 'primary.800'
+      : pathname === '/contact-me'
+      ? 'primary.main'
+      : 'primary.700';
 
   return (
     <Stack
@@ -60,9 +65,9 @@ export default function Navbar() {
           {[
             { title: 'my music', link: '/my-music' },
             { title: 'music I recorded', link: '/music-i-recorded' },
-            { title: 'about me', link: 'about-me' },
-            { title: 'contact me', link: '#' },
-            { title: 'my studio', link: '#' },
+            { title: 'about me', link: '/about-me' },
+            { title: 'contact me', link: '/contact-me' },
+            { title: 'my studio', link: '/my-studio' },
           ].map(({ title, link }, index) => (
             <Stack key={index} alignItems="center">
               <Link href={link}>
@@ -72,7 +77,9 @@ export default function Navbar() {
               </Link>
 
               {pathname === link && (
-                <Indicator color={colors.white.main} size={60} />
+                <Box position="absolute" top="50px">
+                  <Indicator color={colors.white.main} size={60} />
+                </Box>
               )}
             </Stack>
           ))}
