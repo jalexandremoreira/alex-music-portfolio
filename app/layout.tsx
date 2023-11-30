@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import './globals.css';
 import NavbarDesktop from '@/components/navbar/NavbarDesktop';
 import ThemeRegistry from '@/theme/ThemeRegistry';
+import theme from '@/theme';
 
 export const sintony = Sintony({
   subsets: ['latin-ext'],
@@ -20,16 +21,18 @@ export default function RootLayout({
 }) {
   const pathname = usePathname();
 
+  const { palette } = theme;
+
   const bgColor =
     pathname === '/about-me' || pathname === '/my-studio'
-      ? 'primary.800'
+      ? palette.primary[800]
       : pathname === '/contact-me'
-      ? 'primary.main'
-      : 'primary.700';
+      ? palette.primary.main
+      : palette.primary[700];
 
   return (
     <html lang="en">
-      <body className={sintony.className}>
+      <body className={sintony.className} style={{ backgroundColor: bgColor }}>
         <ThemeRegistry options={{ key: 'css' }}>
           <Stack
             // className={
@@ -39,7 +42,6 @@ export default function RootLayout({
             display="flex"
             flex={1}
             justifyContent="flex-start"
-            bgcolor={bgColor}
             width="100%"
             sx={{
               overflowY: 'auto',

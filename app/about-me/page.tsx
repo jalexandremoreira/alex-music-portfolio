@@ -33,7 +33,6 @@ export default function AboutMePage() {
   return (
     <Stack
       alignItems="center"
-      bgcolor="primary.800"
       height="100%"
       justifyContent="center"
       width="100%"
