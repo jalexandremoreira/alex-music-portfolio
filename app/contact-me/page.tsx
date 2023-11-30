@@ -12,7 +12,7 @@ import theme from '@/theme';
 import useAppDimensions from '@/hooks/useAppDimensions';
 import { Email, Phone } from '@/components/Icons';
 
-export default function MyMusicPage() {
+export default function ContactMePage() {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
 
   const { palette } = theme;
@@ -40,7 +40,7 @@ export default function MyMusicPage() {
           <Header
             className="titles prevent-select"
             color="white.main"
-            text="about me"
+            text="let's chat!"
             variant="h3"
           />
 
@@ -55,16 +55,22 @@ export default function MyMusicPage() {
 
           <Stack gap="20px">
             <Accordion
-              body="+46 (0)76 837 56 62"
               icon={<Phone size={28} color={palette.primary[600]} />}
               title="phone number"
-            />
+            >
+              <Typography color="white.main" variant="h5">
+                +46 (0)76 837 56 62
+              </Typography>
+            </Accordion>
 
             <Accordion
-              body="alexmoreiramusic@gmail.com"
               icon={<Email size={28} color={palette.primary[600]} />}
               title="email"
-            />
+            >
+              <Typography color="white.main" variant="h5">
+                alexmoreiramusic@gmail.com
+              </Typography>
+            </Accordion>
           </Stack>
 
           <Links

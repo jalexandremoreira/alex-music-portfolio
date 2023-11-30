@@ -10,6 +10,7 @@ interface Props {
   picBorder: number;
   src: string;
   alt?: string;
+  marginTop?: string;
 }
 
 export default function PictureWithBorder({
@@ -17,12 +18,14 @@ export default function PictureWithBorder({
   picBorder,
   src,
   alt,
+  marginTop,
 }: Props) {
   return (
     <Stack
       alignItems="flex-end"
       height={picDimensions.hD + picBorder}
       width={picDimensions.wD + picBorder}
+      marginTop={marginTop ?? '0'}
     >
       <Stack
         alignItems="flex-end"

@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
 import Stack from '@mui/material/Stack';
+import { Box } from '@mui/material';
 
 import BG from './BG';
 import MusicCard from '@/components/MusicCard';
 import useAppDimensions from '@/hooks/useAppDimensions';
 import { Album, getAlbums } from '@/services/musicList';
-import { Box } from '@mui/material';
 
 export default function MyMusicPage() {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();

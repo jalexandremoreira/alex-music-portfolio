@@ -6,12 +6,12 @@ import theme from '@/theme';
 import { ChevronDown, ChevronUp } from '@/components/Icons';
 
 interface Props {
-  icon: React.ReactNode;
+  children: React.ReactNode;
+  icon?: React.ReactNode;
   title: string;
-  body: string;
 }
 
-export default function Accordion({ icon, title, body }: Props) {
+export default function Accordion({ icon, title, children }: Props) {
   const [show, setShow] = React.useState(false);
 
   const { palette } = theme;
@@ -34,7 +34,7 @@ export default function Accordion({ icon, title, body }: Props) {
         width="100%"
       >
         <Stack direction="row" alignItems="center" gap="15px">
-          {icon}
+          {icon ?? null}
           <Typography
             color="white.main"
             variant="h5"
@@ -53,13 +53,7 @@ export default function Accordion({ icon, title, body }: Props) {
         </Stack>
       </Stack>
 
-      {show && (
-        <Box width="100%">
-          <Typography color="white.main" variant="h5">
-            {body}
-          </Typography>
-        </Box>
-      )}
+      {show && <Box width="100%">{children}</Box>}
     </Stack>
   );
 }

@@ -54,7 +54,6 @@ export default function Navbar() {
         </Link>
 
         <Stack
-          alignItems="center"
           className="user-link"
           direction="row"
           flex={1}
@@ -66,8 +65,8 @@ export default function Navbar() {
             { title: 'my music', link: '/my-music' },
             { title: 'music I recorded', link: '/music-i-recorded' },
             { title: 'about me', link: '/about-me' },
-            { title: 'contact me', link: '/contact-me' },
             { title: 'my studio', link: '/my-studio' },
+            { title: 'contact me', link: '/contact-me' },
           ].map(({ title, link }, index) => (
             <Stack key={index} alignItems="center">
               <Link href={link}>
@@ -77,9 +76,7 @@ export default function Navbar() {
               </Link>
 
               {pathname === link && (
-                <Box position="absolute" top="55px">
-                  <Indicator color={colors.white.main} size={60} />
-                </Box>
+                <Indicator color={colors.white.main} size={60} />
               )}
             </Stack>
           ))}

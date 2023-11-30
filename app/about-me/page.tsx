@@ -12,7 +12,7 @@ import Header from '@/components/header';
 import useAppDimensions from '@/hooks/useAppDimensions';
 import { getTestimonials, Testimonial } from '@/services/testimonials';
 
-export default function MyMusicPage() {
+export default function AboutMePage() {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
 
   const [testimonials, setTestimonials] = React.useState<Testimonial[] | null>(

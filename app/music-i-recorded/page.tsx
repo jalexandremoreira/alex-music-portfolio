@@ -9,7 +9,7 @@ import MusicCard from '@/components/MusicCard';
 import useAppDimensions from '@/hooks/useAppDimensions';
 import { Album, getAlbum, getAlbums } from '@/services/musicList';
 
-export default function MyMusicPage() {
+export default function MusicIRecordedPage() {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
 
   const [album, setAlbum] = React.useState<Album | null>(null);
