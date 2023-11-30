@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import './globals.css';
 import NavbarDesktop from '@/components/navbar/NavbarDesktop';
 import ThemeRegistry from '@/theme/ThemeRegistry';
-import useAppDimensions from '@/hooks/useAppDimensions';
 
 export const sintony = Sintony({
   subsets: ['latin-ext'],
@@ -19,9 +18,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { isMobile, maxWidthDesktop, paddingXDesktop, paddingXMobile } =
-    useAppDimensions();
   const pathname = usePathname();
+
+  const bgColor =
+    pathname === '/about-me' || pathname === '/my-studio'
+      ? 'primary.800'
+      : pathname === '/contact-me'
+      ? 'primary.main'
+      : 'primary.700';
 
   return (
     <html lang="en">
@@ -33,10 +37,9 @@ export default function RootLayout({
             // }
             direction="column"
             display="flex"
-            flexGrow={1}
+            flex={1}
             justifyContent="flex-start"
-            // maxWidth={isMobile ? '100vw' : maxWidthDesktop}
-            bgcolor={pathname === '/' ? 'primary.main' : 'white.main'}
+            bgcolor={bgColor}
             width="100%"
             sx={{
               overflowY: 'auto',

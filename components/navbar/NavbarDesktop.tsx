@@ -27,6 +27,7 @@ export default function Navbar() {
     <Stack
       alignItems="center"
       bgcolor={navbarColor}
+      className="prevent-select"
       id="navbar"
       justifyContent="center"
       left={0}

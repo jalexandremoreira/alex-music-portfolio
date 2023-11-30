@@ -3,10 +3,10 @@ import Stack from '@mui/material/Stack';
 import Link from 'next/link';
 
 import {
+  AppleMusic,
   Bandcamp,
   Instagram,
   Spotify,
-  Tiktok,
   Youtube,
 } from '@/components/Icons';
 
@@ -53,23 +53,23 @@ export default function Links({
         {[
           {
             icon: <Instagram size={55} color={colors[0]} />,
-            link: '#',
+            link: 'https://www.instagram.com/jalexandremoreira/',
           },
           {
-            icon: <Tiktok size={55} color={colors[1]} />,
-            link: '#',
+            icon: <AppleMusic size={55} color={colors[1]} />,
+            link: 'https://music.apple.com/se/artist/alexandre-moreira/1519329052?l=en-GB',
           },
           {
             icon: <Bandcamp size={55} color={colors[2]} />,
-            link: '#',
+            link: 'https://alexandremoreira.bandcamp.com/',
           },
           {
             icon: <Spotify size={55} color={colors[3]} />,
-            link: '#',
+            link: 'https://open.spotify.com/artist/4BCSGv1BbuWdsqUd22jRZQ',
           },
           {
             icon: <Youtube size={55} color={colors[4]} />,
-            link: '#',
+            link: 'https://www.youtube.com/@alexandremoreira1357',
           },
         ].map(({ icon, link }, index) => (
           <Link
@@ -77,6 +77,7 @@ export default function Links({
             key={index}
             onMouseEnter={() => handleColorEnter(index)}
             onMouseLeave={() => handleColorLeave(index)}
+            target="_blank"
           >
             {icon}
           </Link>

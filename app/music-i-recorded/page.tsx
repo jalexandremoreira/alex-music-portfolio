@@ -26,7 +26,6 @@ export default function MusicIRecordedPage() {
   return (
     <Stack
       alignItems="center"
-      bgcolor="primary.700"
       height="100%"
       justifyContent="center"
       width="100%"

@@ -20,7 +20,6 @@ export default function ContactMePage() {
   return (
     <Stack
       alignItems="center"
-      bgcolor="primary.main"
       height="100%"
       justifyContent="center"
       width="100%"

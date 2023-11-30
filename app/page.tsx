@@ -32,7 +32,6 @@ export default function MusicPage() {
       width="100%"
       height="100%"
       direction="row"
-      bgcolor="primary.700"
       className="prevent-select"
     >
       <Circles />

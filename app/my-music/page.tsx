@@ -20,7 +20,6 @@ export default function MyMusicPage() {
   return (
     <Stack
       alignItems="center"
-      bgcolor="primary.700"
       height="100%"
       justifyContent="center"
       width="100%"
