@@ -9,7 +9,7 @@ export default function useAppDimensions() {
   const { width } = useWindowSize();
 
   useEffect(() => {
-    if (DeviceDetect.isMobile) {
+    if (DeviceDetect.isMobileOnly) {
       setIsMobile(true);
     }
   }, []);
