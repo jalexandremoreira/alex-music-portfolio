@@ -35,8 +35,11 @@ export default function Accordion({ icon, title, body }: Props) {
       >
         <Stack direction="row" alignItems="center" gap="15px">
           {icon}
-
-          <Typography color="white.main" variant="h5">
+          <Typography
+            color="white.main"
+            variant="h5"
+            className="prevent-select"
+          >
             {title}
           </Typography>
         </Stack>

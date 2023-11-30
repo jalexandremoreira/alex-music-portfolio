@@ -71,13 +71,13 @@ export default function Navbar() {
           ].map(({ title, link }, index) => (
             <Stack key={index} alignItems="center">
               <Link href={link}>
-                <Typography color="white.main" variant="h6">
+                <Typography color="white.main" variant="h6" fontWeight="bold">
                   {title}
                 </Typography>
               </Link>
 
               {pathname === link && (
-                <Box position="absolute" top="50px">
+                <Box position="absolute" top="55px">
                   <Indicator color={colors.white.main} size={60} />
                 </Box>
               )}

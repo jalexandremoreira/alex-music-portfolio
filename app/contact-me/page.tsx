@@ -38,26 +38,30 @@ export default function MyMusicPage() {
       >
         <Stack maxWidth="40%" gap="40px">
           <Header
-            className="titles"
+            className="titles prevent-select"
             color="white.main"
             text="about me"
             variant="h3"
           />
 
-          <Typography color="white.main" variant="h5">
+          <Typography
+            color="white.main"
+            variant="h5"
+            className="prevent-select"
+          >
             For information regarding services, fees, availability or
             information regarding the studio, please contact me
           </Typography>
 
           <Stack gap="20px">
             <Accordion
-              body="12312938732918"
+              body="+46 (0)76 837 56 62"
               icon={<Phone size={28} color={palette.primary[600]} />}
               title="phone number"
             />
 
             <Accordion
-              body="alex@email.com"
+              body="alexmoreiramusic@gmail.com"
               icon={<Email size={28} color={palette.primary[600]} />}
               title="email"
             />

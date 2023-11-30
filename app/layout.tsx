@@ -36,6 +36,7 @@ export default function RootLayout({
             flexGrow={1}
             justifyContent="flex-start"
             // maxWidth={isMobile ? '100vw' : maxWidthDesktop}
+            bgcolor={pathname === '/' ? 'primary.main' : 'white.main'}
             width="100%"
             sx={{
               overflowY: 'auto',
