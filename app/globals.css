@@ -23,12 +23,17 @@
   transition: 0.5ms ease-in-out;
 }
 
+::-webkit-scrollbar-corner {
+  background: #b24865;
+}
+
 :root {
   width: 100%;
 }
 
 html,
 body {
+  position: relative;
   display: flex;
   flex: 1;
   margin: 0;

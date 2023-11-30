@@ -2,6 +2,8 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 import Link from 'next/link';
 
+import useAppDimensions from '@/hooks/useAppDimensions';
+
 import {
   AppleMusic,
   Bandcamp,
@@ -20,6 +22,8 @@ export default function Links({
   spaceBetween?: boolean;
 }) {
   const [colors, setColors] = React.useState<string[] | null>(null);
+
+  const { isMobile } = useAppDimensions();
 
   React.useEffect(() => {
     setColors([...Array(5)].map(() => color));
@@ -43,6 +47,8 @@ export default function Links({
     }
   };
 
+  const iconSize = isMobile ? 35 : 55;
+
   if (colors)
     return (
       <Stack
@@ -52,23 +58,23 @@ export default function Links({
       >
         {[
           {
-            icon: <Instagram size={55} color={colors[0]} />,
+            icon: <Instagram size={iconSize} color={colors[0]} />,
             link: 'https://www.instagram.com/jalexandremoreira/',
           },
           {
-            icon: <AppleMusic size={55} color={colors[1]} />,
+            icon: <AppleMusic size={iconSize} color={colors[1]} />,
             link: 'https://music.apple.com/se/artist/alexandre-moreira/1519329052?l=en-GB',
           },
           {
-            icon: <Bandcamp size={55} color={colors[2]} />,
+            icon: <Bandcamp size={iconSize} color={colors[2]} />,
             link: 'https://alexandremoreira.bandcamp.com/',
           },
           {
-            icon: <Spotify size={55} color={colors[3]} />,
+            icon: <Spotify size={iconSize} color={colors[3]} />,
             link: 'https://open.spotify.com/artist/4BCSGv1BbuWdsqUd22jRZQ',
           },
           {
-            icon: <Youtube size={55} color={colors[4]} />,
+            icon: <Youtube size={iconSize} color={colors[4]} />,
             link: 'https://www.youtube.com/@alexandremoreira1357',
           },
         ].map(({ icon, link }, index) => (
