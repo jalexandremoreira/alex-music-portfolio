@@ -16,16 +16,18 @@ export default function useAppDimensions() {
 
   const marginBottom = isMobile ? '50px' : '80px';
   const maxWidthDesktop = '1400px';
-  const paddingTopDesktop = '120px';
   const paddingMobile = '20px';
+  const paddingTopDesktop = '100px';
+  const paddingTopMobile = '90px';
   const paddingXDesktop = width > 1199 ? '130px' : '5vw';
 
   return {
     isMobile,
     marginBottom,
     maxWidthDesktop,
-    paddingTopDesktop,
     paddingMobile,
+    paddingTopDesktop,
+    paddingTopMobile,
     paddingXDesktop,
   };
 }

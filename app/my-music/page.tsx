@@ -9,13 +9,58 @@ import useAppDimensions from '@/hooks/useAppDimensions';
 import { Album, getAlbums } from '@/services/musicList';
 
 export default function MyMusicPage() {
-  const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
+  const {
+    isMobile,
+    maxWidthDesktop,
+    paddingMobile,
+    paddingTopDesktop,
+    paddingTopMobile,
+    paddingXDesktop,
+  } = useAppDimensions();
   const [albums, setAlbums] = React.useState<Album[] | null>(null);
 
   React.useEffect(() => {
     setAlbums(getAlbums());
     document.title = 'Alexandre Moreira - my music';
   }, []);
+
+  if (!isMobile) {
+    return (
+      <Stack
+        alignItems="center"
+        height="100%"
+        justifyContent="center"
+        width="100%"
+      >
+        <BG />
+
+        <Stack
+          height="100%"
+          gap="40px"
+          maxWidth={maxWidthDesktop}
+          paddingX={paddingXDesktop}
+          paddingTop={paddingTopDesktop}
+          width="100%"
+          zIndex={20}
+        >
+          {albums
+            ?.filter((a) => a.artist === 'Alexandre Moreira')
+            .map(({ title, date, description, links }, index) => (
+              <MusicCard
+                key={index}
+                bgcolor="primary.800"
+                title={title}
+                date={date}
+                description={description}
+                links={links}
+              />
+            ))}
+
+          <Box />
+        </Stack>
+      </Stack>
+    );
+  }
 
   return (
     <Stack
@@ -28,10 +73,9 @@ export default function MyMusicPage() {
 
       <Stack
         height="100%"
-        gap="40px"
-        maxWidth={maxWidthDesktop}
-        paddingX={paddingXDesktop}
-        paddingTop="100px"
+        gap="20px"
+        paddingX={paddingMobile}
+        paddingTop={paddingTopMobile}
         width="100%"
         zIndex={20}
       >

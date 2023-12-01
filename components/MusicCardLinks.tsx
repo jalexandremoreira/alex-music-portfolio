@@ -2,9 +2,10 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 import Link from 'next/link';
 
+import theme from '@/theme';
+import useAppDimensions from '@/hooks/useAppDimensions';
 import { AppleMusic, Bandcamp, Spotify } from '@/components/Icons';
 import { Links } from '@/services/musicList';
-import theme from '@/theme';
 
 export default function Links({
   spotify,
@@ -12,12 +13,14 @@ export default function Links({
   bandCamp,
 }: Omit<Links, 'coverArt'>) {
   const [colors, setColors] = React.useState<string[] | null>(null);
+  const { isMobile } = useAppDimensions();
+
   const { palette } = theme;
 
   const iconDetails = {
     color: palette.white[200],
     hoverColor: palette.white.main,
-    size: 60,
+    size: isMobile ? 36 : 60,
   };
 
   React.useEffect(() => {

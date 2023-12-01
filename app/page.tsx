@@ -11,7 +11,7 @@ import theme from '@/theme';
 import { AMHorizontal } from '@/components/Icons';
 import useAppDimensions from '@/hooks/useAppDimensions';
 
-export default function MusicPage() {
+export default function LandingPage() {
   React.useEffect(() => {
     document.title = 'Alexandre Moreira';
   }, []);
