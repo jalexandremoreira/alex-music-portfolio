@@ -13,9 +13,9 @@ export default function MusicIRecordedPage() {
   const {
     isMobile,
     maxWidthDesktop,
-    paddingXDesktop,
     paddingTopDesktop,
     paddingTopMobile,
+    paddingXDesktop,
     paddingXMobile,
   } = useAppDimensions();
 

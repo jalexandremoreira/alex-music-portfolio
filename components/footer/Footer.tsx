@@ -4,8 +4,11 @@ import { Stack, Typography } from '@mui/material';
 
 import Links from '../home/Links';
 import theme from '@/theme';
+import useAppDimensions from '@/hooks/useAppDimensions';
 
 export default function Footer({ colorScheme }: { colorScheme: 1 | 2 }) {
+  const { isMobile } = useAppDimensions();
+
   const { palette } = theme;
 
   const mainColor = colorScheme === 1 ? 'primary.main' : 'primary.600';
@@ -20,8 +23,8 @@ export default function Footer({ colorScheme }: { colorScheme: 1 | 2 }) {
     <Stack
       alignItems="center"
       bgcolor="transparent"
-      gap="20px"
-      paddingY="40px"
+      gap={isMobile ? '15px' : '20px'}
+      paddingY={isMobile ? '25px' : '40px'}
       width="100%"
     >
       <Link href="/contact-me">

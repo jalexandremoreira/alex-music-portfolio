@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     clientUrl: 'http://jlabouchere.wixsite.com/jlab',
   },
   {
-    client: 'Lies Hendrix & Joan Peiró Aznar - Aigua',
+    client: 'Aigua',
     message: `We recorded our first album with Alex, and it was a great experience. Alex doesn't only work fast, he also shows a lot of passion for his profession and is a great person to hang out with.`,
     role: 'Client',
     clientUrl: 'https://aiguamusica.bandcamp.com/music',
