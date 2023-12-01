@@ -57,7 +57,7 @@ export default function MusicCard({
         gap="20px"
         justifyContent="space-between"
         padding="20px"
-        width="100%"
+        // width="100%"
       >
         {links.coverArt && (
           <PictureWithBorder
@@ -68,7 +68,8 @@ export default function MusicCard({
             priority={index === 0 ? true : false}
           />
         )}
-        <Stack justifyContent="space-between" flexGrow={1} gap={2}>
+
+        <Stack justifyContent="space-between" gap={2}>
           <Stack gap={4}>
             <Stack
               direction="row"
@@ -126,9 +127,8 @@ export default function MusicCard({
       gap="20px"
       justifyContent="space-between"
       padding="10px"
-      width="100%"
     >
-      <Stack>
+      <Stack gap={1}>
         {hasClose && (
           <Stack direction="row" width="100%" justifyContent="flex-end">
             <Box
