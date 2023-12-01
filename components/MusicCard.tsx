@@ -11,22 +11,24 @@ import { sintony } from '@/app/layout';
 
 interface Props {
   bgcolor: string;
-  title: string;
   date: string;
   description: string;
-  links: Links;
   handleClose?: () => void;
   hasClose?: boolean;
+  index: number;
+  links: Links;
+  title: string;
 }
 
 export default function MusicCard({
   bgcolor,
-  title,
   date,
   description,
-  links,
   handleClose,
   hasClose,
+  index,
+  links,
+  title,
 }: Props) {
   const { palette } = theme;
 
@@ -63,6 +65,7 @@ export default function MusicCard({
             picDimensions={picDimensions[1]}
             picBorder={picBorder[1]}
             alt="Alexandre Moreira"
+            priority={index === 0 ? true : false}
           />
         )}
         <Stack justifyContent="space-between" flexGrow={1}>
@@ -148,6 +151,7 @@ export default function MusicCard({
             picDimensions={picDimensions[0]}
             picBorder={picBorder[0]}
             alt="Alexandre Moreira"
+            priority={index === 0 ? true : false}
           />
         )}
       </Stack>

@@ -7,18 +7,20 @@ interface Props {
     wD: number;
     hD: number;
   };
-  picBorder: number;
-  src: string;
   alt?: string;
   marginTop?: string;
+  picBorder: number;
+  src: string;
+  priority?: boolean;
 }
 
 export default function PictureWithBorder({
-  picDimensions,
-  picBorder,
-  src,
   alt,
   marginTop,
+  picBorder,
+  picDimensions,
+  priority,
+  src,
 }: Props) {
   return (
     <Stack
@@ -50,7 +52,8 @@ export default function PictureWithBorder({
               height={picDimensions.hD}
               src={src}
               width={picDimensions.wD}
-              loading="lazy"
+              loading={priority ? 'eager' : 'lazy'}
+              priority={priority ?? false}
             />
           </Box>
         </Box>

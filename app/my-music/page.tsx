@@ -53,6 +53,7 @@ export default function MyMusicPage() {
                 date={date}
                 description={description}
                 links={links}
+                index={index}
               />
             ))}
 
@@ -89,6 +90,7 @@ export default function MyMusicPage() {
               date={date}
               description={description}
               links={links}
+              index={index}
             />
           ))}
 
