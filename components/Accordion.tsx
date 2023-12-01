@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack';
 import { Box, Typography } from '@mui/material';
 
 import theme from '@/theme';
+import useAppDimensions from '@/hooks/useAppDimensions';
 import { ChevronDown, ChevronUp } from '@/components/Icons';
 
 interface Props {
@@ -13,17 +14,18 @@ interface Props {
 
 export default function Accordion({ icon, title, children }: Props) {
   const [show, setShow] = React.useState(false);
+  const { isMobile } = useAppDimensions();
 
   const { palette } = theme;
+  const iconSize = isMobile ? 20 : 28;
 
   return (
     <Stack
       alignItems="center"
       border={`1px solid ${palette.primary[600]}`}
       borderRadius="10px"
-      gap="20px"
       justifyContent="space-between"
-      padding="20px"
+      padding={isMobile ? '10px' : '20px'}
     >
       <Stack
         alignItems="center"
@@ -33,11 +35,15 @@ export default function Accordion({ icon, title, children }: Props) {
         sx={{ cursor: 'pointer' }}
         width="100%"
       >
-        <Stack direction="row" alignItems="center" gap="15px">
+        <Stack
+          direction="row"
+          alignItems="center"
+          gap={isMobile ? '8px' : '15px'}
+        >
           {icon ?? null}
           <Typography
             color="white.main"
-            variant="h5"
+            variant={isMobile ? 'body1' : 'h5'}
             className="prevent-select"
           >
             {title}
@@ -46,9 +52,9 @@ export default function Accordion({ icon, title, children }: Props) {
 
         <Stack height="100%" justifyContent="center" alignItems="center">
           {show ? (
-            <ChevronUp size={28} color={palette.primary[600]} />
+            <ChevronUp size={iconSize} color={palette.primary[600]} />
           ) : (
-            <ChevronDown size={28} color={palette.primary[600]} />
+            <ChevronDown size={iconSize} color={palette.primary[600]} />
           )}
         </Stack>
       </Stack>
