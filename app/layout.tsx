@@ -4,7 +4,7 @@ import { Sintony } from 'next/font/google';
 import { usePathname } from 'next/navigation';
 
 import './globals.css';
-import NavbarDesktop from '@/components/navbar/NavbarDesktop';
+import Navbar from '@/components/navbar/Navbar';
 import ThemeRegistry from '@/theme/ThemeRegistry';
 import theme from '@/theme';
 
@@ -47,7 +47,7 @@ export default function RootLayout({
               overflowY: 'auto',
             }}
           >
-            {pathname !== '/' && <NavbarDesktop />}
+            {pathname !== '/' && <Navbar />}
 
             {children && children}
           </Stack>

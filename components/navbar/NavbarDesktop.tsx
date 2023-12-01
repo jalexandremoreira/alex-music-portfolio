@@ -1,16 +1,20 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Box, Stack, Typography } from '@mui/material';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 
-// import NavbarMenu from './NavbarMenu';
 import Theme from '@/theme';
 import useAppDimensions from '@/hooks/useAppDimensions';
 import { AMVertical, RouteIndicator as Indicator } from '../Icons';
+import { NavLinkProps } from './Navbar';
 
-export default function Navbar() {
+export default function NavbarDesktop({
+  navLinks,
+}: {
+  navLinks: NavLinkProps[];
+}) {
   const { maxWidthDesktop, paddingXDesktop } = useAppDimensions();
   const pathname = usePathname();
 
@@ -36,7 +40,6 @@ export default function Navbar() {
       top={0}
       width="100%"
       zIndex={100}
-      // position="sticky"
     >
       <Box
         alignItems="center"
@@ -62,13 +65,7 @@ export default function Navbar() {
           justifyContent="space-between"
           spacing="10px"
         >
-          {[
-            { title: 'my music', link: '/my-music' },
-            { title: 'music I recorded', link: '/music-i-recorded' },
-            { title: 'about me', link: '/about-me' },
-            { title: 'my studio', link: '/my-studio' },
-            { title: 'contact me', link: '/contact-me' },
-          ].map(({ title, link }, index) => (
+          {navLinks.map(({ title, link }, index) => (
             <Stack key={index} alignItems="center">
               <Link href={link}>
                 <Typography color="white.main" variant="h6" fontWeight="bold">

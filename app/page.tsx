@@ -16,7 +16,7 @@ export default function LandingPage() {
     document.title = 'Alexandre Moreira';
   }, []);
 
-  const { isMobile, paddingMobile } = useAppDimensions();
+  const { isMobile, paddingXMobile, width } = useAppDimensions();
 
   const { palette } = theme;
 
@@ -34,7 +34,9 @@ export default function LandingPage() {
       hD: 636,
     },
   ];
-  const picBorder = 16;
+  const picBorder = [10, 16];
+
+  const widthCutoff = 1100;
 
   if (!isMobile) {
     return (
@@ -57,9 +59,15 @@ export default function LandingPage() {
           <Stack
             className="drop-shadow"
             gap="20px"
-            width={picDimensions[1].wD + picBorder}
+            width={
+              picDimensions[width > widthCutoff ? 1 : 0].wD +
+              picBorder[width > widthCutoff ? 1 : 0]
+            }
           >
-            <AMHorizontal color={palette.white.main} size={400} />
+            <AMHorizontal
+              color={palette.white.main}
+              size={width > widthCutoff ? 400 : 350}
+            />
 
             <Typography color="white.main" variant="h5">
               sound engineer | producer | musician
@@ -67,8 +75,8 @@ export default function LandingPage() {
           </Stack>
           <PictureWithBorder
             src="/images/alex-trees.png"
-            picDimensions={picDimensions[1]}
-            picBorder={picBorder}
+            picDimensions={picDimensions[width > widthCutoff ? 1 : 0]}
+            picBorder={picBorder[width > widthCutoff ? 1 : 0]}
             alt="Alexandre Moreira"
           />
         </Stack>
@@ -83,7 +91,10 @@ export default function LandingPage() {
         >
           <Stack
             justifyContent="space-between"
-            height={picDimensions[1].hD + picBorder}
+            height={
+              picDimensions[width > widthCutoff ? 1 : 0].hD +
+              picBorder[width > widthCutoff ? 1 : 0]
+            }
             zIndex={20}
           >
             <Stack gap="20px">
@@ -97,7 +108,7 @@ export default function LandingPage() {
                 <Link href={link} key={index}>
                   <Typography
                     color="primary.main"
-                    variant="h3"
+                    variant={width < widthCutoff ? 'h4' : 'h3'}
                     fontWeight="600"
                     sx={hover}
                   >
@@ -123,7 +134,7 @@ export default function LandingPage() {
         alignItems="center"
         width="100%"
         zIndex={20}
-        padding={paddingMobile}
+        padding={paddingXMobile}
         gap="20px"
       >
         <Stack
@@ -142,7 +153,7 @@ export default function LandingPage() {
         <PictureWithBorder
           src="/images/alex-trees.png"
           picDimensions={picDimensions[0]}
-          picBorder={picBorder}
+          picBorder={picBorder[0]}
           alt="Alexandre Moreira"
         />
       </Stack>
@@ -150,7 +161,7 @@ export default function LandingPage() {
       <Stack bgcolor="white.200" flex={1} width="100%">
         <Circles />
 
-        <Stack paddingY={paddingMobile} paddingX="40px" gap="50px" zIndex={20}>
+        <Stack paddingY={paddingXMobile} paddingX="40px" gap="50px" zIndex={20}>
           <Stack gap="10px">
             {[
               { title: 'my music', link: '/my-music' },

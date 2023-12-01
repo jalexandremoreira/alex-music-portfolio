@@ -12,10 +12,10 @@ export default function MyMusicPage() {
   const {
     isMobile,
     maxWidthDesktop,
-    paddingMobile,
     paddingTopDesktop,
     paddingTopMobile,
     paddingXDesktop,
+    paddingXMobile,
   } = useAppDimensions();
   const [albums, setAlbums] = React.useState<Album[] | null>(null);
 
@@ -75,7 +75,7 @@ export default function MyMusicPage() {
       <Stack
         height="100%"
         gap="20px"
-        paddingX={paddingMobile}
+        paddingX={paddingXMobile}
         paddingTop={paddingTopMobile}
         width="100%"
         zIndex={20}

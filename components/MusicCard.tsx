@@ -32,7 +32,7 @@ export default function MusicCard({
 }: Props) {
   const { palette } = theme;
 
-  const { isMobile } = useAppDimensions();
+  const { isMobile, width } = useAppDimensions();
 
   const picDimensions = [
     {
@@ -62,13 +62,13 @@ export default function MusicCard({
         {links.coverArt && (
           <PictureWithBorder
             src={links.coverArt}
-            picDimensions={picDimensions[1]}
-            picBorder={picBorder[1]}
+            picDimensions={picDimensions[width > 1100 ? 1 : 0]}
+            picBorder={picBorder[width > 1100 ? 1 : 0]}
             alt="Alexandre Moreira"
             priority={index === 0 ? true : false}
           />
         )}
-        <Stack justifyContent="space-between" flexGrow={1}>
+        <Stack justifyContent="space-between" flexGrow={1} gap={2}>
           <Stack gap={4}>
             <Stack
               direction="row"

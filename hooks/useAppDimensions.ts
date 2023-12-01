@@ -8,26 +8,31 @@ export default function useAppDimensions() {
 
   const { width } = useWindowSize();
 
+  const mobileCutoffWidth = 750;
+
   useEffect(() => {
-    if (DeviceDetect.isMobileOnly) {
+    if (DeviceDetect.isMobileOnly || width < mobileCutoffWidth) {
       setIsMobile(true);
+    } else if (width > mobileCutoffWidth) {
+      setIsMobile(false);
     }
-  }, []);
+  }, [width]);
 
   const marginBottom = isMobile ? '50px' : '80px';
   const maxWidthDesktop = '1400px';
-  const paddingMobile = '20px';
   const paddingTopDesktop = '100px';
-  const paddingTopMobile = '90px';
+  const paddingTopMobile = '60px';
+  const paddingXMobile = '20px';
   const paddingXDesktop = width > 1199 ? '130px' : '5vw';
 
   return {
     isMobile,
     marginBottom,
     maxWidthDesktop,
-    paddingMobile,
+    paddingXMobile,
     paddingTopDesktop,
     paddingTopMobile,
     paddingXDesktop,
+    width,
   };
 }
