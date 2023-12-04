@@ -26,7 +26,7 @@ export default function RootLayout({
   const bgColor =
     pathname === '/about-me' || pathname === '/my-studio'
       ? palette.primary[800]
-      : pathname === '/contact-me'
+      : pathname === '/contact-me' || pathname === '/business-card'
       ? palette.primary.main
       : palette.primary[700];
 
@@ -35,9 +35,6 @@ export default function RootLayout({
       <body className={sintony.className} style={{ backgroundColor: bgColor }}>
         <ThemeRegistry options={{ key: 'css' }}>
           <Stack
-            // className={
-            //   isMobile ? 'layout-container-mobile' : 'layout-container-desktop'
-            // }
             direction="column"
             display="flex"
             flex={1}
@@ -47,7 +44,7 @@ export default function RootLayout({
               overflowY: 'auto',
             }}
           >
-            {pathname !== '/' && <Navbar />}
+            {pathname !== '/' && pathname !== '/business-card' && <Navbar />}
 
             {children && children}
           </Stack>

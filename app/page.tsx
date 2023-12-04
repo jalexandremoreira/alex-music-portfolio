@@ -73,6 +73,7 @@ export default function LandingPage() {
               sound engineer | producer | musician
             </Typography>
           </Stack>
+
           <PictureWithBorder
             src="/images/alex-trees.png"
             picDimensions={picDimensions[width > widthCutoff ? 1 : 0]}
