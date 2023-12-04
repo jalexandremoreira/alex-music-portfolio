@@ -33,7 +33,7 @@ export default function ContactMePage() {
           <Image
             alt="Alexandre Moreira"
             height={12441}
-            loading="lazy"
+            priority
             src="/images/am-bg.png"
             width={12461}
             style={{
@@ -114,7 +114,7 @@ export default function ContactMePage() {
         <Image
           alt="Alexandre Moreira"
           height={12441}
-          loading="lazy"
+          priority
           src="/images/am-bg.png"
           width={12461}
           style={{
