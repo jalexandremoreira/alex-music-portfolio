@@ -32,10 +32,10 @@ export default function ContactMePage() {
         <Box height="100%" overflow="hidden" position="absolute" width="100%">
           <Image
             alt="Alexandre Moreira"
-            height={12441}
+            width={5900}
+            height={4255}
             priority
             src="/images/am-bg.png"
-            width={12461}
             style={{
               top: '50%',
               left: '50%',
@@ -113,10 +113,10 @@ export default function ContactMePage() {
       <Box height="100%" overflow="hidden" position="absolute" width="100%">
         <Image
           alt="Alexandre Moreira"
-          height={12441}
+          width={5900}
+          height={4255}
           priority
           src="/images/am-bg.png"
-          width={12461}
           style={{
             top: '50%',
             left: '50%',
