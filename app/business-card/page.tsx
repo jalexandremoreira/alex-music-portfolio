@@ -133,6 +133,7 @@ export default function ContactMePage() {
         paddingX={paddingXMobile}
         width="100%"
         zIndex={100}
+        paddingY={4}
       >
         <Stack gap="10px" width="100%">
           <AMVertical color={palette.white.main} size={240} />
