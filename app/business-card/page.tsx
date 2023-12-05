@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import { Box, Typography } from '@mui/material';
 
 import AMPattern from '@/components/AMPattern';
+import info from '@/services/personalInfo';
 import QR from '@/components/QR';
 import theme from '@/theme';
 import useAppDimensions from '@/hooks/useAppDimensions';
@@ -18,12 +19,6 @@ export default function ContactMePage() {
   React.useEffect(() => {
     document.title = `Alexandre Moreira's very cool business card`;
   }, []);
-
-  const info = {
-    email: 'alexmoreiramusic@gmail.com',
-    mobile: '+46 (0)76 837 56 62',
-    website: 'www.alexandremoreira.se',
-  };
 
   if (!isMobile)
     return (

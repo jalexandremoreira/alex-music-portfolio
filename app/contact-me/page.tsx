@@ -8,6 +8,7 @@ import Accordion from '@/components/Accordion';
 import Header from '@/components/header';
 import Links from '@/components/home/Links';
 import QR from '@/components/QR';
+import info from '@/services/personalInfo';
 import theme from '@/theme';
 import useAppDimensions from '@/hooks/useAppDimensions';
 import { Email, Phone } from '@/components/Icons';
@@ -25,15 +26,8 @@ export default function ContactMePage() {
   const { palette } = theme;
 
   React.useEffect(() => {
-    document.title = 'Alexandre Moreira - contact me';
+    document.title = `let's chat!`;
   }, []);
-
-  const info = {
-    email: 'alexmoreiramusic@gmail.com',
-    mobile: '+46 (0)76 837 56 62',
-    moreInfo: `For information regarding services, fees, availability or information regarding the studio, please contact me`,
-    link: 'linktr.ee/jalexandremoreira',
-  };
 
   if (!isMobile)
     return (
@@ -104,7 +98,10 @@ export default function ContactMePage() {
               size={350}
             />
 
-            <Link href={`https://${info.link}`} target="_blank">
+            <Link
+              href={`https://${info.website}${info.linkTree}`}
+              target="_blank"
+            >
               <Typography
                 textAlign="center"
                 color="primary.600"
@@ -114,7 +111,7 @@ export default function ContactMePage() {
                   '&:hover': { color: 'primary.700' },
                 }}
               >
-                {info.link}
+                all my links
               </Typography>
             </Link>
           </Stack>
@@ -137,7 +134,7 @@ export default function ContactMePage() {
         size={350}
       />
 
-      <Link href={`https://${info.link}`} target="_blank">
+      <Link href={`https://${info.website}${info.linkTree}`} target="_blank">
         <Typography
           textAlign="center"
           color="primary.600"
@@ -147,7 +144,7 @@ export default function ContactMePage() {
             '&:hover': { color: 'primary.700' },
           }}
         >
-          {info.link}
+          all my links
         </Typography>
       </Link>
 
