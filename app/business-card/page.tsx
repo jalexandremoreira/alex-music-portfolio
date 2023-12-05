@@ -15,6 +15,10 @@ export default function ContactMePage() {
 
   const { palette } = theme;
 
+  React.useEffect(() => {
+    document.title = `Alexandre Moreira's very cool business card`;
+  }, []);
+
   const info = {
     email: 'alexmoreiramusic@gmail.com',
     mobile: '+46 (0)76 837 56 62',
@@ -89,12 +93,30 @@ export default function ContactMePage() {
               </Stack>
             </Stack>
           </Stack>
+
           <Box bgcolor="primary.600" width="2px" height="100%" />
-          <QR
-            bgColor={palette.primary[600]}
-            color={palette.primary.main}
-            size={350}
-          />
+
+          <Stack gap="15px">
+            <QR
+              bgColor={palette.primary[600]}
+              color={palette.primary.main}
+              size={350}
+            />
+
+            <Link href={`https://${info.website}`} target="_blank">
+              <Typography
+                textAlign="center"
+                color="primary.600"
+                fontWeight="bold"
+                sx={{
+                  transition: 'color 0.1s ease',
+                  '&:hover': { color: 'primary.700' },
+                }}
+              >
+                all my links
+              </Typography>
+            </Link>
+          </Stack>
         </Stack>
       </Stack>
     );
@@ -155,11 +177,27 @@ export default function ContactMePage() {
 
         <Box bgcolor="primary.600" height="2px" width="100%" />
 
-        <QR
-          bgColor={palette.primary[600]}
-          color={palette.primary.main}
-          size={350}
-        />
+        <Stack gap="10px">
+          <QR
+            bgColor={palette.primary[600]}
+            color={palette.primary.main}
+            size={350}
+          />
+
+          <Link href={`https://${info.website}`} target="_blank">
+            <Typography
+              textAlign="center"
+              color="primary.600"
+              fontWeight="bold"
+              sx={{
+                transition: 'color 0.1s ease',
+                '&:hover': { color: 'primary.700' },
+              }}
+            >
+              all my links
+            </Typography>
+          </Link>
+        </Stack>
       </Stack>
     </Stack>
   );

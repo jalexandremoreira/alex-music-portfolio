@@ -24,6 +24,10 @@ export default function ContactMePage() {
 
   const { palette } = theme;
 
+  React.useEffect(() => {
+    document.title = 'Alexandre Moreira - contact me';
+  }, []);
+
   const info = {
     email: 'alexmoreiramusic@gmail.com',
     mobile: '+46 (0)76 837 56 62',
