@@ -89,8 +89,6 @@ export default function ContactMePage() {
             </Stack>
           </Stack>
 
-          <Box bgcolor="primary.600" width="2px" height="100%" />
-
           <Stack gap="15px">
             <QR
               bgColor={palette.primary[600]}
@@ -98,7 +96,10 @@ export default function ContactMePage() {
               size={350}
             />
 
-            <Link href={`https://${info.website}`} target="_blank">
+            <Link
+              href={`https://${info.website}${info.linkTree}`}
+              target="_blank"
+            >
               <Typography
                 textAlign="center"
                 color="primary.600"
@@ -170,8 +171,6 @@ export default function ContactMePage() {
           </Stack>
         </Stack>
 
-        <Box bgcolor="primary.600" height="2px" width="100%" />
-
         <Stack gap="10px">
           <QR
             bgColor={palette.primary[600]}
@@ -179,7 +178,10 @@ export default function ContactMePage() {
             size={350}
           />
 
-          <Link href={`https://${info.website}`} target="_blank">
+          <Link
+            href={`https://${info.website}${info.linkTree}`}
+            target="_blank"
+          >
             <Typography
               textAlign="center"
               color="primary.600"

@@ -26,7 +26,9 @@ export default function RootLayout({
   const bgColor =
     pathname === '/about-me' || pathname === '/my-studio'
       ? palette.primary[800]
-      : pathname === '/contact-me' || pathname === '/business-card'
+      : pathname === '/contact-me' ||
+        pathname === '/business-card' ||
+        pathname === '/links'
       ? palette.primary.main
       : palette.primary[700];
 
@@ -44,7 +46,9 @@ export default function RootLayout({
               overflowY: 'auto',
             }}
           >
-            {pathname !== '/' && pathname !== '/business-card' && <Navbar />}
+            {pathname !== '/' &&
+              pathname !== '/business-card' &&
+              pathname !== '/links' && <Navbar />}
 
             {children && children}
           </Stack>
