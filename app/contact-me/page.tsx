@@ -92,9 +92,7 @@ export default function ContactMePage() {
               spaceBetween
             />
           </Stack>
-
           <Box bgcolor="primary.600" width="2px" height="100%" />
-
           <Stack gap="20px">
             <QR
               bgColor={palette.primary[600]}
@@ -169,18 +167,14 @@ export default function ContactMePage() {
           icon={<Phone size={20} color={palette.primary[600]} />}
           title="phone number"
         >
-          <Typography color="white.main" variant="h5">
-            {info.mobile}
-          </Typography>
+          <Typography color="white.main">{info.mobile}</Typography>
         </Accordion>
 
         <Accordion
           icon={<Email size={20} color={palette.primary[600]} />}
           title="email"
         >
-          <Typography color="white.main" variant="h5">
-            {info.email}
-          </Typography>
+          <Typography color="white.main">{info.email}</Typography>
         </Accordion>
       </Stack>
 

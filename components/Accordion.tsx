@@ -26,6 +26,7 @@ export default function Accordion({ icon, title, children }: Props) {
       borderRadius="10px"
       justifyContent="space-between"
       padding={isMobile ? '10px' : '20px'}
+      gap={isMobile ? '5px' : '10px'}
     >
       <Stack
         alignItems="center"

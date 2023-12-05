@@ -3,8 +3,8 @@ import React from 'react';
 import Link from 'next/link';
 import Stack from '@mui/material/Stack';
 import { Box, Typography } from '@mui/material';
-import Image from 'next/image';
 
+import AMPattern from '@/components/AMPattern';
 import QR from '@/components/QR';
 import theme from '@/theme';
 import useAppDimensions from '@/hooks/useAppDimensions';
@@ -29,20 +29,7 @@ export default function ContactMePage() {
         justifyContent="center"
         width="100%"
       >
-        <Box height="100%" overflow="hidden" position="absolute" width="100%">
-          <Image
-            alt="Alexandre Moreira"
-            width={5900}
-            height={4255}
-            priority
-            src="/images/am-bg.png"
-            style={{
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%,-50%)',
-            }}
-          />
-        </Box>
+        <AMPattern />
 
         <Stack
           alignItems="center"
@@ -53,7 +40,11 @@ export default function ContactMePage() {
           zIndex={100}
         >
           <Stack justifyContent="stretch" gap="50px" alignItems="stretch">
-            <Stack gap="5px" width="100%">
+            <Stack
+              gap="5px"
+              width="100%"
+              className="drop-shadow prevent-select"
+            >
               <AMVertical color={palette.white.main} size={290} />
 
               <Typography color="white.main">
@@ -110,20 +101,7 @@ export default function ContactMePage() {
 
   return (
     <Stack width="100%" height="100%">
-      <Box height="100%" overflow="hidden" position="absolute" width="100%">
-        <Image
-          alt="Alexandre Moreira"
-          width={5900}
-          height={4255}
-          priority
-          src="/images/am-bg.png"
-          style={{
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%,-50%)',
-          }}
-        />
-      </Box>
+      <AMPattern />
 
       <Stack
         alignItems="center"
@@ -135,7 +113,7 @@ export default function ContactMePage() {
         zIndex={100}
         paddingY={4}
       >
-        <Stack gap="10px" width="100%">
+        <Stack gap="10px" width="100%" className="drop-shadow prevent-select">
           <AMVertical color={palette.white.main} size={240} />
 
           <Typography color="white.main">
