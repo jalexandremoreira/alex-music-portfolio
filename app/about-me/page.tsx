@@ -39,8 +39,8 @@ export default function AboutMePage() {
 
   const aboutMe = [
     `Alexandre Moreira is a recording, mixing and mastering engineer, and a record producer who specializes in arrangements and co-writing, recording and mixing. His work spans many genres, from Jazz and Classical, to Rock, Metal and Pop.`,
-    `After starting many musical projects and having learned the basics of music production, he got his Bachelor's in Music Production and Technologies in the Faculty of Music and Performing Arts of Porto (ESMAE). In 2015, he moved to Gothenburg, Sweden, where he runs his recording studio. Some of his clients include American-Swedish singer-songwriter Jacques Labouchere, percussionists Manuel Alcaraz Clemente, Lúcia Viana da Silva and Malin Sjökvist, Lebanese prog-metal acts Amadeus Awad and Ostura, and the folk duo MónDuo.`,
-    `Aside from his work with other musicians, his own compositions can be heard under the name Husky Riders, which is a solo project with a wide range of musical genres and influences, that features a number of different guests such as multi-instrumentalist Ric Byer, Riccardo and Matteo Nicolin, Sebastian Sandoval, and is mastered by José Diogo Neves.`,
+    `After starting many musical projects and having learned the basics of music production, he got his Bachelor's in Music Production and Technologies in the Faculty of Music and Performing Arts of Porto (ESMAE). In 2015, he moved to Gothenburg, Sweden, where he runs his recording studio. Some of his clients include American-Swedish singer-songwriter Jacques Labouchere, percussionists Manuel Alcaraz Clemente, Lúcia Viana da Silva and Malin Sjökvist, Lebanese prog-metal acts Amadeus Awad and Ostura, and the folk duo Aigua.`,
+    `Aside from his work with other musicians, his own solo project spans a wide range of musical genres and influences, that features a number of different guests such as multi-instrumentalist Ric Byer, Riccardo and Matteo Nicolin, Sebastian Sandoval, among others.`,
   ];
 
   if (!isMobile)
